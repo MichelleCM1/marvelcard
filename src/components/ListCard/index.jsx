@@ -18,13 +18,13 @@ const Title= styled.div`
 font-weight: 700;
 margin-bottom: 5px;
 color: #04000a;
-font-family: "fantasy";
+font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 `;
 
 const Description = styled.div`
-margin-bottom: 2px;
-font-family: "fantasy" ;
-text-align: center;
+height: 20px;
+text-align: start;
+
 
 `
 
@@ -46,23 +46,16 @@ vertical-align: middle;
 
 `
 
-const myAtropos= styled.div`
-  width: 320px;
-  height: 160px;
 
-`
-
-
-
-export default function ListCard(card) {
+export default function ListCard({cards}) {
   return (
     <>
-    <ItemLink href= {card.url} target ="_blank">
+    <ItemLink href= {cards.url} target ="_blank">
       <ItemContainer>
         
-        <Title>{card.title}</Title>
-        <Image src={card.image}></Image>
-        <Description>{card.description}</Description>
+        <Title>{cards.title}</Title>
+        <Image src={cards.image}></Image>
+        <Description>{cards.description}</Description>
         
 
 

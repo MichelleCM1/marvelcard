@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import Atropos from 'atropos/react';
 import ListCard from './components/ListCard';
 import {getCard} from './../api/CardService';
 import styled from 'styled-components';
-import 'react-animated-css';
+import api from './services/api';
+
+
+
 
 
 const Container = styled.div`
@@ -35,25 +37,30 @@ padding: 10px;
 
 
 function App() {
-   const [card, setCard ] = useState([]); 
+   const [cards, setCard ] = useState([]); 
+
    useEffect( () => {
-    setCard (getCard)
-  }, 
-   [])
+    const url ='/cards';
+     api.get(url)
+
+   .then( (response) => {
+    
+    setCard(response.data)}
+   )
+  },[])
 
 
   return (
     
     <Container>
-     <h1 className="animate__zoomIn" >Marvel Card </h1>
+     <h1 >Marvel Card </h1>
      <ListContainer>
        {
-       card.map(card =>{
+       cards.map(card =>{
         return (<ListCard
           key={card.url}
-          title={card.title}
-          image={card.image}
-          description={card.description}
+          cards={card}
+  
           />)
        })
         }
