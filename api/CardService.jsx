@@ -9,7 +9,7 @@ export function getCard(){
            
         },
         { 
-            "title": "Iron men",
+            "title": "Homem de ferro",
             "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/iron-man.webp?v=108",
             "url": "https://marvelsnapzone.com/cards/iron-man/",
             "description": "Constante: Seu poder total é dobrado neste local",

@@ -17,8 +17,8 @@ padding: 10px;
 const Title= styled.div`
 font-weight: 700;
 margin-bottom: 5px;
-color: #7b2097;
-font-family: 'Arial Narrow Bold', sans-serif;
+color: #04000a;
+font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 `;
 
 const Description = styled.div`
@@ -47,7 +47,7 @@ vertical-align: middle;
 `
 
 
-export default function ListCard({cards}) {
+export default function ListAdmCard({cards}) {
   return (
     <>
     <ItemLink href= {cards.url} target ="_blank">

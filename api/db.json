@@ -1,24 +1,68 @@
 {
-    "cards": [
-    { 
-        "title": "Odin",
-        "image":"https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/odin.webp?v=108",
-        "url": "https://marvelsnapzone.com/cards/odin/",
-        "description": "Ao Revelar: ativa suas habilidades ao revelar de suas outras cartas neste local "
-       
+  "cards": [
+    {
+      "id": 1,
+      "title": "Odin",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/odin.webp?v=108",
+      "url": "https://marvelsnapzone.com/cards/odin/",
+      "description": "Ao Revelar: ativa suas habilidades ao revelar de suas outras cartas neste local "
     },
-    { 
-        "title": "Iron men",
-        "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/iron-man.webp?v=108",
-        "url": "https://marvelsnapzone.com/cards/iron-man/",
-        "description": "Constante: Seu poder total é dobrado neste local"
+    {
+      "id": 2,
+      "title": "Homem de ferro",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/iron-man.webp?v=108",
+      "url": "https://marvelsnapzone.com/cards/iron-man/",
+      "description": "Constante: Seu poder total é dobrado neste local"
     },
-    { 
-        "title": "Apocalypse",
-        "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/apocalypse.webp?v=108",
-        "url": "https://marvelsnapzone.com/cards/apocalypse/",
-        "description":"Quando você descartae esta carta da sua mão, recupere-a com +4 de poder"
-        
+    {
+      "id": 3,
+      "title": "Apocalypse",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/apocalypse.webp?v=108",
+      "url": "https://marvelsnapzone.com/cards/apocalypse/",
+      "description": "Quando você descartae esta carta da sua mão, recupere-a com +4 de poder"
+    },
+    {
+      "title": "Pantera Negra",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/black-panther.webp?v=116",
+      "description": "Ao revelar : dobre o poder desta carta.",
+      "url": "https://marvelsnapzone.com/cards/black-panther/",
+      "id": 4
+    },
+    {
+      "title": "Capitã Marvel",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/captain-marvel.webp?v=116",
+      "description": "No final do jogo, vá para um local que ganhe o jogo. (Se possível)",
+      "url": "https://marvelsnapzone.com/cards/captain-marvel/",
+      "id": 5
+    },
+    {
+      "title": "Hulk",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/hulk.webp?v=116",
+      "description": "“HULK QUEBRA!”",
+      "url": "https://marvelsnapzone.com/cards/hulk/",
+      "id": 6
+    },
+    {
+      "title": "Homem Aranha",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/spider-man.webp?v=116",
+      "description": "Ao revelar : mova-se para outro local e puxe uma carta inimiga daqui para ali.",
+      "url": "https://marvelsnapzone.com/cards/spider-man/",
+      "id": 7
+    },
+    {
+      "title": "Thor",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/thor.webp?v=116",
+      "description": "Ao revelar : Embaralhe o Mjolnir no seu baralho.",
+      "url": "https://marvelsnapzone.com/cards/thor/",
+      "id": 8
+    },
+    {
+      "title": "Homem Formiga",
+      "image": "https://marvelsnapzone.com/wp-content/themes/blocksy-child/assets/media/cards/ant-man.webp?v=116",
+      "description": "Contínuo : Se você tiver 3 outras cartas aqui, +3 de Poder.",
+      "url": "https://marvelsnapzone.com/cards/ant-man/",
+      "id": 9
     }
-    ]
+    
+  ]
 }

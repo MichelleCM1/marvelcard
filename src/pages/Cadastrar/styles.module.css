@@ -1,0 +1,28 @@
+.cardsFormGroup{
+    display: flex;
+    width: 300px;
+    margin:  auto;
+    padding: 20px;
+    border: 1px solid #4e0564;
+    border-radius: 5px;
+    background-color: #cb83e0;
+    border-radius: 3px;
+    margin-bottom: 15px;
+
+}
+h1{
+    text-align: center;
+    color: #8c31a8;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+button {
+    display: flex;
+    margin: 0 auto;
+    background-color: #cb83e0;
+    padding: 10px 20px;
+    font-size:  16px;
+}
+
+
+
