@@ -42,7 +42,6 @@ margin-right:1px;
 vertical-align: middle;
 width: auto;
 border: 0;
-vertical-align: middle;
 
 `
 
@@ -56,7 +55,6 @@ export default function ListCard({cards}) {
         <Title>{cards.title}</Title>
         <Image src={cards.image}></Image>
         <Description>{cards.description}</Description>
-        
 
 
       </ItemContainer>

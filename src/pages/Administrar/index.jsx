@@ -36,11 +36,14 @@ padding: 10px 20px;
 const Button = styled.button`
 margin-bottom: 20px;
 background-color: #c1a7eb;
+align-items: center;
 `
+
+
 
 function ListAdm (){
   const[cards, setCards] = useState([]);
-  const[search, setSearch] = useState('');
+  const[search] = useState('');
 
   useEffect( () => {
       const url = '/cards';
@@ -71,8 +74,13 @@ function ListAdm (){
           <Container>
         <h1> Administrando Marvel List Card</h1>
        <Link to="/cadastrar">
-        <Button onClick={''}> Cadastar novo</Button>
+        <Button> Cadastar novo</Button>
        </Link>
+      
+
+
+
+
         <ListContainer>
           {
             cards.map(card => {
