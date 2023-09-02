@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ListCard from '../../components/ListCard';
 import api from '../../services/api';
-import styles from './styles.module.css';
+import styles from './styles.modules.css';
 
 
 const Container = styled.div`
@@ -14,7 +14,8 @@ max-width: 960px;
 color: #691488;
 font-family: "fantasy";
 text-align: center;
-
+position: relative;
+left: 150px;
 `
 
 
@@ -27,9 +28,25 @@ justify-content: center;
 align-items: center;
 background-color: #691488;
 padding: 10px;
+position: relative;
+left: 150px;
 
 
+`
 
+const StyledH1 = styled.h1`
+   position: relative;
+   left: 150px;
+`
+
+const Input = styled.input`
+   position: relative;
+   left: 150px;
+   width: 100%;
+   height: 40px;
+   margin-bottom: 20px;
+   border: 1px solid #ccc;
+   border-radius: 8px;
 `
 
 function ListCards (){
@@ -62,28 +79,28 @@ function ListCards (){
 
 
     return(
-          <Container>
-        <h1>Marvel List Card</h1>
-        <input 
-          className={styles.listSearchInput}
-          type="search" 
-          placeholder='Buscar Herói'
-          value={search}
-          onChange={(ev) => setSearch(ev.target.value)}
-        />
-        <ListContainer>
-          {
-            cards.map(card => {
-              return ( <ListCard 
-                key={card.id} 
-                cards={card}
-                
-                  /> )
-            })
-          }
-          
-        </ListContainer>
-    </Container>
+      <Container>
+      <StyledH1>Marvel List Card</StyledH1>
+      <Input
+        className={styles.listSearchInput}
+        type="search" 
+        placeholder='Buscar Herói'
+        value={search}
+        onChange={(ev) => setSearch(ev.target.value)}
+      />
+      <ListContainer>
+        {
+          cards.map(card => {
+            return ( <ListCard 
+              key={card.id} 
+              cards={card}
+              
+                /> )
+          })
+        }
+        
+      </ListContainer>
+  </Container>
     )
 }
 

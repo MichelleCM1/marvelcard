@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import api from '../../services/api';
 import {useNavigate} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
-import styles from './styles.module.css';
+import styled from 'styled-components';
 
 const initialValue = {
     title: '',
@@ -11,6 +11,62 @@ const initialValue = {
     url: '',
 
 };
+    const Label = styled.label`
+        display:flex;
+        flex-direction:column;
+        margin-top: 15px;
+       
+      
+    `
+
+const Input = styled.input`
+       display:flex;
+        flex-direction:column;
+       /* margin-top: 15px; */
+       width: 100%;
+       height: 100%;
+       font-size: 25px;
+       border-radius: 8px;
+
+`
+const Form = styled.form`
+    display:flex;
+    flex-direction:column;
+   
+`
+const Conteiner = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 550px;
+    padding: 12px 25px;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+  
+`
+const Button = styled.button`
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #ccc;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  background-color: #a60fe2;
+  padding: 12px 25px;
+  font-weight: 400;
+  border-radius: 8px;
+  font-size: 16px;
+  left: 5px;
+    
+`
+const StyledH1 = styled.div`
+position: relative;
+left: 600px;
+font-size: 30px;
+
+`
 
 function Editar(){
     const [values, setValues] = useState(initialValue);
@@ -25,14 +81,22 @@ function Editar(){
                 .then( (response) => {
                     setValues(response.data)
                 })
+                
         }
     },[])
         
 
-
-    
+    function onSubmit(ev){
+        ev.preventDefault();
+        
+        api.put(url, values)
+        .then(() => {
+            navigate('/administrar')
+        })
+    }
     function onChange(ev){
         const {name, value } = ev.target
+        console.log({name,value})
        
 
         setValues({ ...values, [name]:value})
@@ -40,29 +104,19 @@ function Editar(){
     }
     return(
         <>
-        <h1>Editar</h1>
-        <form>
-            <div className={styles.cardsFormGroup}>
-                <label htmlFor="title">Titulo</label>
-                <input type="text" id="title" name="title" value={values.title} onChange={onChange}/>
-            </div>
-            <div className={styles.cardsFormGroup}>
-                <label htmlFor="image">Url/Image</label>
-                <input type="text" id="image" name="image" value={values.image} onChange={onChange}/>
-            </div>
-            <div className={styles.cardsFormGroup}>
-                <label htmlFor="description">Descrição</label>
-                <input type="text" id="description" name="description" value={values.description}  onChange={onChange}/>
-                
-            </div>
-            <div className={styles.cardsFormGroup}>
-                <label htmlFor="url">Url do Card</label>
-                <input type="text" id="url" name="url" value={values.url} onChange={onChange}/>
-            </div>
+      <StyledH1>Editar</StyledH1>
+        <Form onSubmit={onSubmit}>
+            <Conteiner>
+                <Label htmlFor="title">Titulo</Label>
+                <Input type="text" id="title" name="title" value={values.title} onChange={onChange} />
+                <Label htmlFor="url">Url do Card</Label>
+                <Input type="text" id="url" name="url" value={values.url} onChange={onChange}/>
+                <Label htmlFor="image">Url/Imagem</Label>
+                <Input type="text" id="image" name="image" value={values.image} onChange={onChange} />
+                <Button type='submit' onClick={'/'}>Salvar</Button>
+            </Conteiner>
 
-            <button type="submit">Salvar</button>
-
-        </form>
+        </Form>
         </>
     )
     }

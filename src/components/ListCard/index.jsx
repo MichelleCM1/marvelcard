@@ -49,16 +49,15 @@ border: 0;
 export default function ListCard({cards}) {
   return (
     <>
+    <ItemContainer>
     <ItemLink href= {cards.url} target ="_blank">
-      <ItemContainer>
         
         <Title>{cards.title}</Title>
         <Image src={cards.image}></Image>
         <Description>{cards.description}</Description>
-
-
-      </ItemContainer>
-      </ItemLink>
+      
+    </ItemLink>
+  </ItemContainer>
     </>
   )
 }

@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const ItemContainer = styled.div`
 border-radius: 4px;
 background-color: #c1a7eb;
-height: 190px;
-width: 240px;
+height: 300px;
+width: 400px;
 color: #000000;
 margin-bottom: 10px;
 margin-right: 10px;
@@ -54,23 +54,28 @@ const ButtonEdit = styled.span`
   padding: 8px 15px;
   color: #fff;
   background-color: #e2700c;
-  border-color: #9f5307;
-  border-radius: 4px;
+  border-radius: 10px;
+  position: relative;
+  left: 20px;
+  
  
 `;
 
 const ButtonDelete = styled.span`
   display:flex;
   align-items: center;
-  font-weight: 400;
+  font-weight: 700;
   cursor: pointer;
   border: 1px solid transparent;
-  font-size: 14px;
-  padding: 8px 15px;
+  font-size: 20px;
+  padding: 10px 15px;
   color: #fff;
   background-color: #e41010;
-  border-color: #8b0505;
-  border-radius: 4px;
+  border-radius: 10px;
+  position: relative;
+  left: 15px;   
+  
+ 
  
 `;
 
@@ -78,7 +83,7 @@ const ButtonDelete = styled.span`
 const ButtonPane = styled.div`
   display: flex;
   text-align: center;
-  font-weight: 400;
+  font-weight: 700;
   cursor: pointer;
   border: 1px solid transparent;
   font-size: 14px;
@@ -88,19 +93,30 @@ const ButtonPane = styled.div`
 `
 
 export default function ListAdmCard({cards}) {
+  const[loading, setLoading]=useState(true);
+
+  function onDelete(id){setLoading (false); 
+  const url = `/cards/${id}  `;
+api.delete (url)
+.then((response)=> {});}
+
   return (
     <>
+   {!loading
+   ?(
+    <div>deletando</div>
+   )
+   : (
+
+  
+
     
-      <ItemContainer>
-        
-        
-        <Title>{cards.title}</Title>
+    <ItemContainer>
+         
+       <Title>{cards.title}</Title>
         <Image src={cards.image}></Image>
         <Description>{cards.description}</Description>
-
-
-      </ItemContainer>
-
+       
       <ButtonPane>
                   <ButtonEdit>
                     <Link to={`/administrar/editar/${cards.id}`}>
@@ -114,9 +130,13 @@ export default function ListAdmCard({cards}) {
                     Deletar
                   </ButtonDelete>
 
-                </ButtonPane>
+      </ButtonPane>
       
-      
+      </ItemContainer>
+   )
+}
+
+    
     </>
   )
 }

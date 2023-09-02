@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import ListAdmCard from '../../components/ListAdmCard';
 import api from '../../services/api';
 import {Link} from 'react-router-dom';
-// import styles from './styles.module.css';
 
 
 const Container = styled.div`
@@ -16,9 +15,16 @@ color: #691488;
 font-family: "fantasy";
 text-align: center;
 padding: 10px 20px;
+position: relative;
+left: 600px;
 
 `
-
+const Div = styled.div`
+max-width: 960px;
+display: flex;
+gap: 10px;
+vertical-align: middle;
+`
 
   
 const ListContainer = styled.div`
@@ -35,13 +41,39 @@ padding: 10px 20px;
 `
 const Button = styled.button`
 margin-bottom: 20px;
-background-color: #c1a7eb;
+color: #ccc;
 align-items: center;
+display: flex;
+cursor: pointer;
+background-color: #a60fe2;
+padding: 13px 25px;
+font-weight: 400;
+border-radius: 8px;
+font-size: 16px;
+`
+
+const Input = styled.input`
+  display: flex;
+  height: 42px;
+  border: 1px solid #ccc;
+  border-radius: 8px ;
+  width: 100%;
+  margin-bottom:20px;
+  padding: 0 10px;
+  font-size:25px;
+`
+const StyledH1 = styled.div`
+color: #9d12d4;
+font-size: 50px;
+display: flex;
+position: relative;
+left: 600px;
+
 `
 
 
 
-function ListAdm (){
+function CadastrarAdministrar(){
   const[cards, setCards] = useState([]);
   const[search] = useState('');
 
@@ -71,30 +103,36 @@ function ListAdm (){
 
 
     return(
-          <Container>
-        <h1> Administrando Marvel List Card</h1>
-       <Link to="/cadastrar">
-        <Button> Cadastar novo</Button>
-       </Link>
-      
-
-
-
-
-        <ListContainer>
-          {
-            cards.map(card => {
-              return ( <ListAdmCard
-                key={card.id} 
-                cards={card}
-                
-                  /> )
-            })
-          }
+      <>
+      <StyledH1> Administrando Marvel List Card</StyledH1>
+      <Container>
           
-        </ListContainer>
-    </Container>
+      <Div>
+            <Input 
+                type="search"
+                placeholder='Busque o heroi'
+                value={search}
+                onChange={(ev)=> setSearch(ev.target.value)}
+                />
+              <Link to="/administrar/cadastrar">
+              <Button>Cadastrar</Button>
+              </Link>
+      </Div>
+        
+          <ListContainer>
+            {
+              cards.map(card => {
+                return ( <ListAdmCard
+                  key={card.id} 
+                  cards={card}/> 
+                  )
+              })
+            }
+            
+          </ListContainer>
+      </Container>
+      </>
     )
 }
 
-export default ListAdm;
+export default CadastrarAdministrar;
